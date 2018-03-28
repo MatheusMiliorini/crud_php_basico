@@ -39,4 +39,9 @@
         $query = "UPDATE produtos SET nome='$nome', preco='$preco', descricao='$descricao', categoria_id='$categoria_id' WHERE id='$id'";
         return mysqli_query($conexao,$query);
     }
+
+    function adicionarProduto($conexao,$nome,$preco,$descricao,$categoria) {
+        $query = "INSERT INTO produtos (nome,preco,descricao,categoria_id) VALUES ('$nome','$preco','$descricao','$categoria')";
+        return mysqli_query($conexao,$query);
+    }
 ?>
