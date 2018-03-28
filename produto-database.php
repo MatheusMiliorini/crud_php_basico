@@ -7,7 +7,36 @@
         while ($row = mysqli_fetch_assoc($resultado)) {
             array_push($produtos,$row);
         }
-
         return $produtos;
+    }
+
+    function buscarProduto($conexao,$id) {
+
+        $resultado = array();
+    
+        $sql = "SELECT * FROM produtos WHERE id='$id'";
+        $query = mysqli_query($conexao,$sql);
+
+        while ($row = mysqli_fetch_assoc($query)) {
+            array_push($resultado,$row);
+        }
+        return $resultado;
+    }
+
+    function buscarCategorias($conexao) {
+        $resultado = array();
+    
+        $sql = "SELECT * FROM categorias";
+        $query = mysqli_query($conexao,$sql);
+
+        while ($row = mysqli_fetch_assoc($query)) {
+            array_push($resultado,$row);
+        }
+        return $resultado;
+    }
+
+    function alterarProduto($conexao,$id,$nome,$preco,$descricao,$categoria_id) {
+        $query = "UPDATE produtos SET nome='$nome', preco='$preco', descricao='$descricao', categoria_id='$categoria_id' WHERE id='$id'";
+        return mysqli_query($conexao,$query);
     }
 ?>

@@ -4,7 +4,7 @@
     include_once('produto-database.php');
 ?>
 
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered meio">
         <tr>
             <td>Nome</td>
             <td>Preço</td>
@@ -22,12 +22,12 @@
             <td><?=$produto['preco']?></td>
             <td><?=$produto['descricao']?></td>
             <td><?=$produto['cat_nome']?></td>
-            <td><a href="produto-update-form.php" class="btn btn-primary"><span class="glyphicon glyphicon-refresh"></span></a></td>
-
+            <td><a href="produto-update-form.php?id=<?=$produto['id']?>" class="btn btn-primary"><span class="glyphicon glyphicon-refresh"></span></a></td>
+        </tr>
             <?php
                 endforeach;
             ?>
-        </tr>
+        
     </table>
 
 <?php 

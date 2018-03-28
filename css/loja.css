@@ -4,5 +4,12 @@ body {
 
 .principal {
     padding: 40px 15px;
+}
+
+.meio {
     text-align: center;
+}
+
+.totalwidth {
+    width: 100%;
 }
