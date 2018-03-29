@@ -44,4 +44,9 @@
         $query = "INSERT INTO produtos (nome,preco,descricao,categoria_id) VALUES ('$nome','$preco','$descricao','$categoria')";
         return mysqli_query($conexao,$query);
     }
+
+    function removeProduto($conexao,$id) {
+        $query = "DELETE FROM produtos WHERE id='$id'";
+        return mysqli_query($conexao,$query);
+    }
 ?>

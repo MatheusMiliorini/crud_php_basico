@@ -1,4 +1,4 @@
-<?php include_once('cabecalho.php'); ?>
+<?php include_once('cabecalho.php');?>
 
     <h1 class="meio">Bem vindo!</h1>
 

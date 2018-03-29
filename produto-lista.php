@@ -22,7 +22,10 @@
             <td><?=$produto['preco']?></td>
             <td><?=$produto['descricao']?></td>
             <td><?=$produto['cat_nome']?></td>
-            <td><a href="produto-update-form.php?id=<?=$produto['id']?>" class="btn btn-primary"><span class="glyphicon glyphicon-refresh"></span></a></td>
+            <td>
+                <a href="produto-update-form.php?id=<?=$produto['id']?>" class="btn btn-primary"><span class="glyphicon glyphicon-refresh"></span></a>
+                <a href="produto-delete-confirma.php?id=<?=$produto['id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a>
+            </td>
         </tr>
             <?php
                 endforeach;
