@@ -3,7 +3,9 @@
     include_once('conecta.php');
     include_once('produto-database.php');
 
-    $categorias = buscarCategorias($conexao);
+    $conexao = new BancoDeDados("cloud.matheusmiliorini.com.br","minhaloja","essaeminhasenha","minhaloja");
+    $prod = new Produto($conexao);
+    $categorias = $prod->buscarCategorias();
 ?>
     <form action="produto-add.php" method="POST">        
         <div class="form-group">

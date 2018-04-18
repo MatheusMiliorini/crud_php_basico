@@ -3,7 +3,9 @@
     include_once('conecta.php');
     include_once('produto-database.php');
 
-    $produto = buscarProduto($conexao,$_GET['id']);
+    $conexao = new BancoDeDados("cloud.matheusmiliorini.com.br","minhaloja","essaeminhasenha","minhaloja");
+    $prod = new Produto($conexao);
+    $produto = $prod->buscarProdutoID($_GET['id']);
 ?>
 
     <h1 class="meio">Você deseja realmente excluir o produto "<?=$produto[0]['nome']?>"?</h1>

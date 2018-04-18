@@ -2,6 +2,9 @@
     include_once('cabecalho.php');
     include_once('conecta.php');
     include_once('produto-database.php');
+
+    $conexao = new BancoDeDados("cloud.matheusmiliorini.com.br","minhaloja","essaeminhasenha","minhaloja");
+    $prod = new Produto($conexao);
 ?>
 
     <table class="table table-striped table-bordered meio">
@@ -14,7 +17,7 @@
         </tr>
         <tr>
             <?php
-                $produtos = listarProdutos($conexao);
+                $produtos = $prod->listarProdutos();
                 foreach ($produtos as $produto) :
             ?>
                 

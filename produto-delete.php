@@ -3,7 +3,9 @@
     include_once('conecta.php');
     include_once('produto-database.php');
 
-    $sucesso = removeProduto($conexao,$_POST['id']);
+    $conexao = new BancoDeDados("cloud.matheusmiliorini.com.br","minhaloja","essaeminhasenha","minhaloja");
+    $prod = new Produto($conexao);
+    $sucesso = $prod->removeProduto($_POST['id']);
 ?>
     <div class="meio">
         <?php if($sucesso): ?>

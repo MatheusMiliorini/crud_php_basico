@@ -3,8 +3,11 @@
     include_once('conecta.php');
     include_once('produto-database.php');
 
-    $produto = buscarProduto($conexao,$_GET['id']);
-    $categorias = buscarCategorias($conexao);
+    $conexao = new BancoDeDados("cloud.matheusmiliorini.com.br","minhaloja","essaeminhasenha","minhaloja");
+    $prod = new Produto($conexao);
+
+    $produto = $prod->buscarProdutoID($_GET['id']);
+    $categorias = $prod->buscarCategorias();
 ?>
     <form action="produto-update.php" method="POST">
         <input type="hidden" id="id" name="id" class="form-control" value="<?=$produto[0]['id']?>">
